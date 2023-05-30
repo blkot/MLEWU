@@ -28,18 +28,17 @@ namespace Xanta.Application.Framework.UI.Core
 
         public override void Initialize()
         {
-            view = Instantiate(Resources.Load<GameObject>(VIEWS_ADDRESS_IN_RESOURCE).GetComponent<TView>());
-            throw new System.NotImplementedException();
+            view = Instantiate(Resources.Load<GameObject>(ViewAddress), transform).GetComponent<TView>();
         }
 
         public override void Show()
         {
-            throw new System.NotImplementedException();
+            view.gameObject.SetActive(true);
         }
 
         public override void Hide()
         {
-            throw new System.NotImplementedException();
+            view.gameObject.SetActive(false);
         }
     }
 }
